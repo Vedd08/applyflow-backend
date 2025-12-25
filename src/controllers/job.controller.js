@@ -3,8 +3,8 @@ import Application from '../models/Application.js';
 
 /* ================= CREATE JOB ================= */
 export const createJob = async (req, res) => {
-  console.log('BODY:', req.body);
-console.log('USER:', req.user);
+  //   console.log('BODY:', req.body);
+  // console.log('USER:', req.user);
 
   try {
     const job = await Job.create({

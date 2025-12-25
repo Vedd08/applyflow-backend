@@ -63,7 +63,7 @@ export const checkIfApplied = async (req, res) => {
    RECRUITER VIEW
 ========================= */
 export const getApplicantsForRecruiter = async (req, res) => {
-  console.log('Recruiter ID:', req.user._id);
+  // console.log('Recruiter ID:', req.user._id);
 
   const applications = await Application.find({
     recruiterId: req.user._id
