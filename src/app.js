@@ -8,7 +8,20 @@ import recruiterRoutes from './routes/recruiter.routes.js';
 import path from 'path';
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      'http://localhost:5173',
+      'https://applyflow-frontend.onrender.com' // add later
+    ],
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+  })
+);
+
+app.options('*', cors());
+
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
