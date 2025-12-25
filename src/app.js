@@ -8,11 +8,23 @@ import recruiterRoutes from './routes/recruiter.routes.js';
 import path from 'path';
 const app = express();
 
+// app.use(
+//   cors({
+//     origin: [
+//       'http://localhost:5173',
+//       'https://applyflow-frontend.onrender.com' // add later
+//     ],
+//     credentials: true,
+//     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+//     allowedHeaders: ['Content-Type', 'Authorization']
+//   })
+// );
+
 app.use(
   cors({
     origin: [
       'http://localhost:5173',
-      'https://applyflow-frontend.onrender.com' // add later
+      'https://applyflowweb.netlify.app'
     ],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
@@ -20,7 +32,8 @@ app.use(
   })
 );
 
-// app.options('*', cors());
+
+app.options('*', cors());
 
 app.use(express.json());
 
