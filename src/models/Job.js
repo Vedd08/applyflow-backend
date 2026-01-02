@@ -7,7 +7,10 @@ const jobSchema = new mongoose.Schema(
     description: { type: String, required: true },
     type: {
       type: String,
-      enum: ['internship', 'job'],
+      enum: {
+        values: ['internship', 'part-time', 'full-time', 'remote'],
+        message: 'Invalid job type'
+      },
       required: true
     },
     location: { type: String, required: true },
